@@ -3,7 +3,7 @@
  * @return {number}
  */
  var mySqrt = function(x) {
-   let left=0, right= x
+   let left=1, right= x
    while(left<=right)
    {
        let mid= Math.floor(left + (right-left)/2)
@@ -24,7 +24,7 @@
    return right
 };
 
-const result= mySqrt(-4)
+const result= mySqrt(1298754)
 
 console.log(result);
 
