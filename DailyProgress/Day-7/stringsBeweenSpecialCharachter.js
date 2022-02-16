@@ -3,7 +3,7 @@
  * @return {string}
  */
 
-const table= ['p', 'sum', "divide"]
+const table= ['p', 'sum', "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide", "divide"]
 
  var stringsBetweenSpecialCharachter = function(list ) {
     let result= ''
@@ -24,7 +24,7 @@ const table= ['p', 'sum', "divide"]
             else 
             {
                 result=result+ table[query]
-                 i= i+2
+                 i= i+ (processed.substring(0,next$).trim()).length
             }
             
           }
@@ -41,6 +41,6 @@ const table= ['p', 'sum', "divide"]
 };
 
 
-const formula = "$0$ +$2$+ 5x+3+ $ 2 $"
+const formula = "$0$ +$5$+ 5x+3+ $26$"
 const result= stringsBetweenSpecialCharachter(formula)
 console.log(result)
