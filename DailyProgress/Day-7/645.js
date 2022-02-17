@@ -4,39 +4,32 @@
  */
  var findErrorNums = function(nums) {
     let table= new Map ()
-    for(let i=0;i <nums.length;i++)
+    let errorData= null
+    for(let i=1;i <=nums.length;i++)
     {
-        if (table.has(nums[i]))
-        {
-              table.set(nums[i], {value:false, position:i})
-            
-        }
-        else 
-        {
-            table.set(nums[i], {value:false, position:i})
-        }
+        table.set(i)
     }
 
-    console.log(table);
-    for(let i=1;i <=nums.length;i++)
-{
-    if(table.get(i)===undefined)
+
+    for(item of nums)
     {
-        if(table.get(i-1)===true )
-        {
-         return[i,i+1]
-        }
-        else 
-        {
-            return[i-1,i]
-        }
+       if(table.has(item))
+       {
+           table.delete(item)
+       }
+
+       else
+       {
+           errorData= item
+       }
     }
-}
+    return [errorData,...table.keys()]
+   
 };
 
 
 
-const nums= [2,2]
+const nums= [1,2,2,4]
 
 const result= findErrorNums(nums)
 console.log(result);
