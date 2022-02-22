@@ -7,20 +7,23 @@
     let table =new Map()
     for(item of arr)
     {
-        if(table.has(item))
-        {
-            table.delete(item)
-        }
-        else 
-        {
-            table.set(item)
-        }
+       if(table.has(item))
+       {
+       table.set(item, table.get(item) + 1)
+       }
+       else 
+       {
+           table.set(item,1)
+       }
     }
-    console.log(arr.length,[...table][k+1]);
 
-    return [...table][k-1] ?[...table][k-1][0] :""
+  let temp= [...table].filter((item)=>item[1]===1)
+ 
+   
+  return temp[k-1]? temp[k-1][0]:""
 
 };
+let newArr= ["aaa","aaa","aa","a"]
 let arr = [
   "meio",
   "l",
